@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "iisExpress": {
+      "applicationUrl": "http://localhost:3002",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "ListingApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "heartbeat",
+      "applicationUrl": "http://localhost:3002",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

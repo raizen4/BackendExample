@@ -1,0 +1,34 @@
+name: "$(major).$(minor).$(patch)"
+
+trigger:
+  branches:
+    include:
+      - master
+  paths:
+    include:
+      - domain-services/listing/listing-api/*
+
+variables:
+  major: 0
+  minor: 0
+  patch: $[counter(format('{0}.{1}', variables['major'], variables['minor']), 0)]
+  version: "$(major).$(minor).$(patch)"
+
+  kubernetesNamespace: "listing"
+  appName: "listing-api"
+
+stages:
+  - template: /Shared/Pipeline/Stages/buildandscan-dotnetcore.5.1.0.yml
+    parameters:
+      workingDirectory: $(System.DefaultWorkingDirectory)/domain-services/listing/listing-api
+      solutionName: "ListingApi"
+      azureContainerRegistryRepository: $(appName)
+      packageVersion: $(version)
+      helmChartPath: /Shared/Charts/Microservice-v2
+
+  - template: /Shared/Pipeline/Stages/deployment-worker-api.1.0.0.yml
+    parameters:
+      environment: Staging
+      appNamespace: $(kubernetesNamespace)
+      appName: $(appName)
+      appVersion: $(version)

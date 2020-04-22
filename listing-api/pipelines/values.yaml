@@ -1,0 +1,29 @@
+name: listing-api
+domain: listing
+environment: #{environment}#
+
+deployment:
+  httpPort: 3002
+  livenessProbe:
+    httpGet:
+      path: /heartbeat
+    initialDelaySeconds: 3
+    periodSeconds: 3
+  readinessProbe:
+    httpGet:
+      path: /heartbeat
+    initialDelaySeconds: 3
+    periodSeconds: 3
+  strategy: "RollingUpdate"
+  image:
+    repository: "boomindockerregistry.azurecr.io"
+    name: "listing-api"
+    tag: #{tag}#
+    pullPolicy: IfNotPresent
+  envVariables:
+    injectAppConfigVariables: true
+  usePrometheus: true
+
+identity:
+  clientId: #{identityClientId}#
+  resourceId: #{identityResourceId}#

@@ -1,0 +1,94 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/bogdanboldur/Desktop/Work/Boomin/domain-services/listing/listing-api/ListingApi.UnitTests/ListingApi.UnitTests.csproj",
+    "projectName": "ListingApi.UnitTests",
+    "projectPath": "/Users/bogdanboldur/Desktop/Work/Boomin/domain-services/listing/listing-api/ListingApi.UnitTests/ListingApi.UnitTests.csproj",
+    "outputPath": "/Users/bogdanboldur/Desktop/Work/Boomin/domain-services/listing/listing-api/ListingApi.UnitTests/obj/",
+    "projectStyle": "PackageReference",
+    "originalTargetFrameworks": [
+      "netcoreapp3.1"
+    ],
+    "sources": {
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "projectReferences": {
+          "/Users/bogdanboldur/Desktop/Work/Boomin/domain-services/listing/listing-api/ListingApi/ListingApi.csproj": {
+            "projectPath": "/Users/bogdanboldur/Desktop/Work/Boomin/domain-services/listing/listing-api/ListingApi/ListingApi.csproj"
+          },
+          "/Users/bogdanboldur/Desktop/Work/Boomin/domain-services/shared/web-api.test-utils/WebApi.TestUtils/WebApi.TestUtils.csproj": {
+            "projectPath": "/Users/bogdanboldur/Desktop/Work/Boomin/domain-services/shared/web-api.test-utils/WebApi.TestUtils/WebApi.TestUtils.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp3.1": {
+      "dependencies": {
+        "Microsoft.AspNetCore.Mvc.Testing": {
+          "target": "Package",
+          "version": "[3.0.0, )"
+        },
+        "Moq": {
+          "target": "Package",
+          "version": "[4.13.1, )"
+        },
+        "Shouldly": {
+          "target": "Package",
+          "version": "[3.0.2, )"
+        },
+        "System.Net.Http": {
+          "target": "Package",
+          "version": "[4.3.4, )"
+        },
+        "Xunit": {
+          "target": "Package",
+          "version": "[2.4.1, )"
+        },
+        "coverlet.collector": {
+          "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[1.1.0, )"
+        },
+        "coverlet.msbuild": {
+          "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.7.0, )"
+        },
+        "xunit.runner.visualstudio": {
+          "target": "Package",
+          "version": "[2.4.1, )"
+        }
+      },
+      "imports": [
+        "net461",
+        "net462",
+        "net47",
+        "net471",
+        "net472",
+        "net48"
+      ],
+      "assetTargetFallback": true,
+      "warn": true,
+      "frameworkReferences": {
+        "Microsoft.AspNetCore.App": {
+          "privateAssets": "none"
+        },
+        "Microsoft.NETCore.App": {
+          "privateAssets": "all"
+        }
+      },
+      "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+    }
+  }
+}

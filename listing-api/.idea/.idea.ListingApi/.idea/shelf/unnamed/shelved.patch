@@ -1,0 +1,280 @@
+Index: ../../../client/web/agent/listing-ui-web/src/components/pages/Listing/Create/index.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { useState, useEffect } from 'react';\nimport { useParams } from 'react-router-dom';\n\nimport { Theme } from '@material-ui/core/styles';\nimport Grid from '@material-ui/core/Grid';\nimport Fade from '@material-ui/core/Fade';\n\nimport Button from '@material-ui/core/Button';\nimport makeStyles from '@material-ui/styles/makeStyles';\nimport Container from '@material-ui/core/Container';\n\nimport AutoSaveRender from '../../../atoms/AutoSaveRender';\nimport Nav from '../../../organisms/Nav';\nimport Header from '../../../organisms/Header';\nimport Breadcrumbs from '../../../molecules/Breadcrumbs';\nimport CreateListingForm from '../../../organisms/CreateListingForm';\nimport { IListing } from '../../../../types/Listing';\nimport { GetListingById } from '../../../../services/ListingService';\nimport { GetFormattedAddress } from '../../../../services/PropertyCardService';\n\nconst drawerWidth = 240;\n\nconst useStyles = makeStyles((theme: Theme) => ({\n  parentContainer: {\n    display: 'flex',\n    flexDirection: 'row',\n    width: '100%'\n  },\n\n  containerStyle: {\n    marginTop: '2rem',\n    marginBottom: '2rem'\n  },\n\n  mainContentContainer: {\n    display: 'flex',\n    flexDirection: 'column',\n    marginLeft: `${drawerWidth}px`,\n    flex: '0 0 100%',\n    maxWidth: `calc(100% - ${drawerWidth}px)`\n  }\n}));\n\nfunction Home() {\n  const classes = useStyles({});\n  const [loading, setLoading] = useState(false);\n  const [loaded, setLoaded] = useState(false);\n  const [listing, setListing] = useState<IListing | null>(null);\n  const [saving, setSaving] = useState(false);\n  const [lastSaved, setLastSaved] = useState(new Date());\n  const { id } = useParams();\n  useEffect(() => {\n    async function getListingData() {\n      try {\n        setLoading(true);\n        const res = await GetListingById(id);\n        if (res) {\n          setListing(res);\n        } else {\n          console.log(`Could not load Id: ${id}`);\n        }\n        setLoading(false);\n        setLoaded(true);\n      } catch (error) {\n        console.log(error);\n        setLoading(false);\n      }\n    }\n    getListingData();\n  }, [id]);\n\n  return (\n    <>\n      {loading && (\n        <div>\n          <h1>loading</h1>\n        </div>\n      )}\n      {!loading && loaded && (\n        <Fade in={true}>\n          <div className={classes.parentContainer}>\n            <div className={classes.mainContentContainer}>\n              <Header />\n              <AutoSaveRender saving={saving} lastSaved={lastSaved} />\n              <Container className={classes.containerStyle} fixed>\n                <Grid container spacing={4}>\n                  <Grid item xs={12}>\n                    {listing && (\n                      <Breadcrumbs\n                        route={{\n                          label: 'test name',\n                          path: '/listing'\n                        }}\n                        pageLabel={'Create a draft property listing'}\n                      />\n                    )}\n                  </Grid>\n                </Grid>\n                <Grid container spacing={4} alignItems=\"center\">\n                  <Grid item xs={9}>\n                    {listing && (\n                      <h2>\n                        {GetFormattedAddress(listing.propertyDetails.address)}\n                      </h2>\n                    )}\n                  </Grid>\n\n                  <Grid item xs={3}>\n                    <Button href=\"/listing\">Cancel listing</Button>\n                  </Grid>\n                </Grid>\n                <CreateListingForm\n                  listing={listing}\n                  setSaving={setSaving}\n                  setLastSaved={setLastSaved}\n                />\n              </Container>\n            </div>\n            <Nav />\n          </div>\n        </Fade>\n      )}\n    </>\n  );\n}\n\nexport default Home;\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../../../client/web/agent/listing-ui-web/src/components/pages/Listing/Create/index.tsx	(revision 8bdd3e7f4d906fdc7bc9e2d65920bc7d24606027)
++++ ../../../client/web/agent/listing-ui-web/src/components/pages/Listing/Create/index.tsx	(date 1585156796047)
+@@ -1,4 +1,4 @@
+-import React, { useState, useEffect } from 'react';
++import React, { useState, useEffect, useCallback } from 'react';
+ import { useParams } from 'react-router-dom';
+ 
+ import { Theme } from '@material-ui/core/styles';
+@@ -8,6 +8,7 @@
+ import Button from '@material-ui/core/Button';
+ import makeStyles from '@material-ui/styles/makeStyles';
+ import Container from '@material-ui/core/Container';
++import FullScreenLoader from '../../../../../../../shared/components/molecules/FullScreenLoader';
+ 
+ import AutoSaveRender from '../../../atoms/AutoSaveRender';
+ import Nav from '../../../organisms/Nav';
+@@ -16,7 +17,17 @@
+ import CreateListingForm from '../../../organisms/CreateListingForm';
+ import { IListing } from '../../../../types/Listing';
+ import { GetListingById } from '../../../../services/ListingService';
+-import { GetFormattedAddress } from '../../../../services/PropertyCardService';
++import {
++  DeleteListing,
++  RestoreListing
++} from '../../../../services/ListingService';
++import {
++  Dialog,
++  DialogTitle,
++  DialogContent,
++  DialogContentText,
++  DialogActions
++} from '@material-ui/core';
+ 
+ const drawerWidth = 240;
+ 
+@@ -44,77 +55,159 @@
+ function Home() {
+   const classes = useStyles({});
+   const [loading, setLoading] = useState(false);
+-  const [loaded, setLoaded] = useState(false);
+   const [listing, setListing] = useState<IListing | null>(null);
+   const [saving, setSaving] = useState(false);
+   const [lastSaved, setLastSaved] = useState(new Date());
++  const [showFailedToDeleteListing, setShowFailedToDeleteListing] = useState<boolean>(false);
++  const [showFailedToRestoreListing, setShowFailedToRestoreListing] = useState<boolean>(false);
+   const { id } = useParams();
+-  useEffect(() => {
+-    async function getListingData() {
+-      try {
+-        setLoading(true);
+-        const res = await GetListingById(id);
+-        if (res) {
+-          setListing(res);
+-        } else {
+-          console.log(`Could not load Id: ${id}`);
+-        }
+-        setLoading(false);
+-        setLoaded(true);
+-      } catch (error) {
+-        console.log(error);
+-        setLoading(false);
+-      }
++
++  const getListingData = useCallback(async () => {
++    try {
++      setLoading(true);
++      const res = await GetListingById(id);
++      if (res) {
++        setListing(res);
++      } else {
++        console.log(`Could not load Id: ${id}`);
++      }
++      setLoading(false);
++    } catch (error) {
++      console.log(error);
++      setLoading(false);
+     }
++  }, [id])
++
++
++  useEffect(() => {
+     getListingData();
+-  }, [id]);
++  }, [id, getListingData]);
++
++
++
++  async function deleteListing(listingId: IListing): Promise<void> {
++    try {
++      setLoading(true);
++
++      const result = await DeleteListing(listing.listingUri);
++      if (result !== 200) {
++        setShowFailedToDeleteListing(true);
++      }
++      await getListingData();
++      setLoading(false);
++    } catch (ex) {
++      setLoading(false);
++      setShowFailedToDeleteListing(true);
++    }
++  }
++
++  async function restoreListing(listingId: IListing): Promise<void> {
++    try {
++      setLoading(true);
++
++      const result = await RestoreListing(listing.listingUri);
++      if (result !== 200) {
++        setShowFailedToDeleteListing(true);
++      }
++      await getListingData();
++      setLoading(false);
++    } catch (ex) {
++      setLoading(false);
++      setShowFailedToDeleteListing(true);
++    }
++  }
+ 
+   return (
+     <>
+-      {loading && (
+-        <div>
+-          <h1>loading</h1>
+-        </div>
+-      )}
+-      {!loading && loaded && (
++      <FullScreenLoader show={loading}></FullScreenLoader>
++      {!loading && (
+         <Fade in={true}>
+           <div className={classes.parentContainer}>
+             <div className={classes.mainContentContainer}>
+               <Header />
+-              <AutoSaveRender saving={saving} lastSaved={lastSaved} />
+-              <Container className={classes.containerStyle} fixed>
+-                <Grid container spacing={4}>
+-                  <Grid item xs={12}>
+-                    {listing && (
+-                      <Breadcrumbs
+-                        route={{
+-                          label: 'test name',
+-                          path: '/listing'
+-                        }}
+-                        pageLabel={'Create a draft property listing'}
+-                      />
+-                    )}
+-                  </Grid>
+-                </Grid>
+-                <Grid container spacing={4} alignItems="center">
+-                  <Grid item xs={9}>
+-                    {listing && (
+-                      <h2>
+-                        {GetFormattedAddress(listing.propertyDetails.address)}
+-                      </h2>
+-                    )}
+-                  </Grid>
++              {listing?.listingDetails.deleted === false ? (
++                <>
++                  <Dialog
++                    open={showFailedToDeleteListing}
++                    onClose={() => setShowFailedToDeleteListing(false)}
++
++                  >
++                    <DialogTitle>Error</DialogTitle>
++                    <DialogContent>
++                      <DialogContentText>
++                        Listing could not be deleted. Please try again!
++                      </DialogContentText>
++                    </DialogContent>
++                    <DialogActions>
++                      <Button
++                        onClick={() => setShowFailedToDeleteListing(false)}
++                        color="primary"
++                      >
++                        OK
++                      </Button>
++                    </DialogActions>
++                  </Dialog>
++                  <AutoSaveRender saving={saving} lastSaved={lastSaved} />
++                  <Container className={classes.containerStyle} fixed>
++                    <Grid container spacing={4}>
++                      <Grid item xs={12}>
++                        {listing && (
++                          <Breadcrumbs
++                            customer={{
++                              label: 'test name',
++                              route: '/listing'
++                            }}
++                          />
++                        )}
++                      </Grid>
++                    </Grid>
++                    <Grid container spacing={4} alignItems="center">
++                      <Grid item xs={9}>
++                        {listing && <h2>{Address(listing)}</h2>}
++                      </Grid>
+ 
+-                  <Grid item xs={3}>
+-                    <Button href="/listing">Cancel listing</Button>
+-                  </Grid>
+-                </Grid>
+-                <CreateListingForm
+-                  listing={listing}
+-                  setSaving={setSaving}
+-                  setLastSaved={setLastSaved}
+-                />
+-              </Container>
++                      <Grid item xs={3}>
++                        <Button href="/listing">Cancel listing</Button>
++                      </Grid>
++                    </Grid>
++                    <CreateListingForm
++                      listing={listing}
++                      deleteListing={deleteListing}
++                      setSaving={setSaving}
++                      setLastSaved={setLastSaved}
++                    />
++                  </Container>
++                </>
++              ) : (
++                  <>
++                    <Dialog
++                      open={showFailedToRestoreListing}
++                      onClose={() => setShowFailedToRestoreListing(false)}
++                    >
++                      <DialogTitle>Error</DialogTitle>
++                      <DialogContent>
++                        <DialogContentText>
++                          Listing could not be restored. Please try again!
++                      </DialogContentText>
++                      </DialogContent>
++                      <DialogActions>
++                        <Button
++                          onClick={() => setShowFailedToRestoreListing(false)}
++                          color="primary"
++                        >
++                          OK
++                      </Button>
++                      </DialogActions>
++                    </Dialog>
++                    <div className={classes.deletedContainerStyle}>
++                      <p>This listing has been deleted. If you want to restore it please press on the 'Resotre Listing' button below.</p>
++                      <Button onClick={() => restoreListing(listing as IListing)}>
++                        Restore Listing
++                  </Button>
++                    </div>
++
++                  </>
++                )}
+             </div>
+             <Nav />
+           </div>
+@@ -124,4 +217,20 @@
+   );
+ }
+ 
++function Address(listing: IListing) {
++  return (
++    <>
++      {listing.propertyDetails.address.buildingName &&
++        `${listing.propertyDetails.address.buildingName} `}
++      {listing.propertyDetails.address.buildingNumber &&
++        `${listing.propertyDetails.address.buildingNumber} `}
++      {listing.propertyDetails.address.street &&
++        `${listing.propertyDetails.address.street}, `}
++      {listing.propertyDetails.address.line3 &&
++        `${listing.propertyDetails.address.line3}, `}
++      {listing.propertyDetails.address.postalCode}
++    </>
++  );
++}
++
+ export default Home;

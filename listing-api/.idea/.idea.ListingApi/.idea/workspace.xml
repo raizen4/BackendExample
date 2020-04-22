@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="61cc8740-ec46-43db-adc5-0e58502c09b5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ListingApi.UnitTests/Setup/TestHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ListingApi.UnitTests/Setup/TestHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_getting_the_last_event_for_a_listing/TestHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_getting_the_last_event_for_a_listing/given_valid_request.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_getting_the_last_event_for_a_listing/given_valid_request.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_getting_the_last_event_for_a_listing/given_valid_request_and_database_call_throws_exception.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_getting_the_last_event_for_a_listing/given_valid_request_and_database_call_throws_exception.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="ListingApi" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ListingApi/DataAccess/DataAccessConfig.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/DataAccess/ListingStoreAccess.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/DataAccess/Interfaces/IListingStore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/TestCosmosHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UnitTestsCollection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/MockingWebApplicationFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/ListingDetails.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/DataAccess/Interfaces/IAuditListingStore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/Cosmos/AuditEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/DescriptionRoom.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/DataAccess/AuditListingStoreAccess.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/Description.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/Floorplan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/Image.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/DataAccess/Interfaces/IListingHelperService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Controllers/IngestListingsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/given_valid_request.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/given_valid_id_and_db_throws_exception_on_update.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/Dto/ListingSaveRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_request.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/TestHelperRestoreListing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_id_and_db_throws_exception_on_AddEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/Dto/ListingLookupResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/given_valid_id_and_db_throws_exception_on_AddEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/Dto/ListingSaveResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_id_and_db_throws_exception_on_retrieve.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/given_valid_id_and_db_throws_exception_on_retrieve.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/Dto/UpdateImageResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_id_and_db_throws_exception_on_update.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Services/ListingHelperService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/Cosmos/Listing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/TestHelperSoftDelete.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/Cosmos/ListingChangeHistoryItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Models/Domain/ListingRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_adding_new_images_for_listing/given_the_image_is_valid_but_there_is_a_db_error.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_adding_new_images_for_listing/given_the_image_is_valid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_adding_new_images_for_listing/given_the_image_is_missing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_removing_images_from_listing/given_the_image_is_valid_but_there_is_a_db_error.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_removing_images_from_listing/given_the_image_is_valid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Clients/AgentPropertyClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Helpers/AgentPropertyHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_removing_images_from_listing/given_the_image_is_missing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Helpers/Constants.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Helpers/ListingSyncHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Helpers/Mapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/Setup/TestHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Services/UpdateImageService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Interfaces/Clients/IAgentPropertyClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Interfaces/Helpers/IAgentPropertyHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Interfaces/Helpers/IListingSyncHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../diary/Shared/Diary.Common/Models/Branch.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Controllers/ListingsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Controllers/HeartbeatController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9FC07081-2D98-4703-B6B8-E9D3858CD4A5/1E/ManagedIdentityCredential.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_getting_the_last_event_for_a_listing/given_valid_request_and_database_call_throws_exception.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_getting_the_last_event_for_a_listing/given_valid_request.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/CustomExceptions/ListingApiExceptions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/NullStringAsEmptyContractResolver.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/Helpers/TestAuthHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/HelperTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../shared/platform/Boomin.Platform.CosmosDatabase/ConfigureExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_creating_listing/given_valid_advert_dto_and_synthetic_header.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_creating_listing/given_valid_advert_dto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_creating_listing/given_cosmos_db_failure.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_creating_listing/given_advert_dto_missing_required_fields.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_creating_listing/given_an_unauthenticated_request.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_updating_listing/given_listing_dto_missing_required_fields.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_retrieving_active_listing/given_valid_listing_id.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_updating_listing/given_valid_listing_dto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_retrieving_active_listing/given_empty_listing_id.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_updating_listing/given_synthetic_headers_do_not_match.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_retrieving_active_listing/given_invalid_listing_id.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_updating_listing/given_valid_dto_not_found_in_db.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_updating_listing/given_cosmos_db_failure.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi/Controllers/ActiveListingsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_lookingup_listing/given_a_request_when_dependancy_is_down.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_lookingup_listing/given_a_valid_request_which_doesnt_exist.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/87953FC8-F62F-47B6-A4FC-8EC09AE6A806/12/ShouldAssertException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_lookingup_listing/given_a_valid_request_which_exists.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_lookingup_listing/given_an_unauthenticated_request.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_retrieving_listing/given_empty_listing_id.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_retrieving_listing/given_valid_listing_id.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_retrieving_listing/given_invalid_listing_id.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_retrieving_listing/given_listing_with_null_fields.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_retrieving_listing/given_cosmos_db_failure.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_lookingup_listing/given_a_request_when_dependancy_is_down.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_lookingup_listing/given_a_valid_request_which_doesnt_exist.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_lookingup_listing/given_a_valid_request_which_exists.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_removing_images_from_listing/given_the_image_is_valid_but_there_is_a_db_error.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_retrieving_active_listing/given_invalid_listing_id.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_updating_listing/given_cosmos_db_failure.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_updating_listing/given_valid_dto_not_found_in_db.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_updating_listing/given_valid_listing_dto.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/Models/Dto/AuditEventRequest.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_id_and_type.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/MockingWebApplicationFactory.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_creating_listing/given_an_unauthenticated_request.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_lookingup_listing/given_an_unauthenticated_request.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/Models/Cosmos/Listing.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/given_valid_id_db_fails_on_retrieve.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/given_valid_id_db_fails_on_update.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/given_valid_id_db_fails_on_AddEvent.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/Helpers/Constants.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_id_db_fails_on_AddEvent.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_id_db_fails_on_retrieve.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_id_db_fails_on_update.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_id_and_db_fails_on_AddEvent.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_id_and_db_fails_on_update.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_id_and_db_fails_on_retrieve.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/given_valid_id_and_db_throws_exception_on_retrieve.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/given_valid_id_and_db_throws_exception_on_update.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/Startup.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_id_and_db_throws_exception_on_AddEvent.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/given_valid_request.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/DataAccess/Interfaces/IListingStore.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/DataAccess/Interfaces/IListingHelperService.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/Models/ListingDetails.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/Models/Cosmos/AuditEvent.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/CustomExceptions/ListingApiExceptions.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/TestHelperRestoreListing.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/TestHelperSoftDelete.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_soft_deleting_listing/given_valid_request.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/Models/Dto/ListingLookupResponse.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/Helpers/Mapper.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/DataAccess/ListingStoreAccess.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/DataAccess/Interfaces/IAuditListingStore.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/Program.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/appsettings.json" />
+        <option value="$PROJECT_DIR$/ListingApi/DataAccess/AuditListingStoreAccess.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/Services/ListingHelperService.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_getting_the_last_event_for_a_listing/TestHelper.cs" />
+        <option value="$PROJECT_DIR$/ListingApi/Controllers/ListingsController.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_getting_the_last_event_for_a_listing/given_valid_request_and_database_call_throws_exception.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_getting_the_last_event_for_a_listing/given_valid_request.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/Setup/TestHelper.cs" />
+        <option value="$PROJECT_DIR$/ListingApi.UnitTests/UseCases/when_restoring_a_deleted_listing/given_valid_id_and_db_throws_exception_on_AddEvent.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YiNYKz7QNqc7hMZ3zjUYys22wb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TWShift.3" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ListingApi.UnitTests" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.ListingApi">
+    <configuration name="ListingApi" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ListingApi/ListingApi.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="ListingApi" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListingApi.UnitTests: IIS Express (1)" type="LaunchSettings" factoryName=".NET Launch Settings Profile" temporary="true">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ListingApi.UnitTests/ListingApi.UnitTests.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListingApi.UnitTests: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ListingApi.UnitTests/ListingApi.UnitTests.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListingApi.UnitTests: ListingApi.Tests" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ListingApi.UnitTests/ListingApi.UnitTests.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="ListingApi.Tests" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue=".NET Launch Settings Profile.ListingApi.UnitTests: IIS Express (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="61cc8740-ec46-43db-adc5-0e58502c09b5" name="Default Changelist" comment="" />
+      <created>1583421501517</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583421501517</updated>
+      <workItem from="1583421504551" duration="8654000" />
+      <workItem from="1583501741635" duration="19281000" />
+      <workItem from="1584117564253" duration="945000" />
+      <workItem from="1584630167761" duration="72447000" />
+      <workItem from="1585181612205" duration="8544000" />
+      <workItem from="1585221835415" duration="9420000" />
+    </task>
+    <task id="LOCAL-00001">
+      <created>1585156909497</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585156909498</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="496" y="225" width="1065" height="669" key="#C#" timestamp="1583503254784">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="496" y="225" width="1065" height="669" key="#C#/0.0.1792.1120@0.0.1792.1120" timestamp="1583503254784" />
+    <state x="507" y="154" key="#ListingApi.UnitTests:_IIS_Express_(1)" timestamp="1585097793807">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="507" y="154" key="#ListingApi.UnitTests:_IIS_Express_(1)/0.0.1792.1120@0.0.1792.1120" timestamp="1585097793807" />
+    <state x="396" y="144" key="#Plugins" timestamp="1583501675010">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="396" y="144" key="#Plugins/0.0.1792.1120@0.0.1792.1120" timestamp="1583501675010" />
+    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583423126374">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1583423126374" />
+    <state x="534" y="413" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1583506096950">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="534" y="413" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1792.1120@0.0.1792.1120" timestamp="1583506096950" />
+    <state x="289" y="174" key="CommitChangelistDialog2" timestamp="1585156909631">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="289" y="174" key="CommitChangelistDialog2/0.23.1792.1097@0.23.1792.1097" timestamp="1585156909631" />
+    <state width="718" height="466" key="DebuggerActiveHint" timestamp="1585222477692">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="718" height="466" key="DebuggerActiveHint/0.0.1792.1120@0.0.1792.1120" timestamp="1585153085733" />
+    <state width="718" height="466" key="DebuggerActiveHint/0.23.1792.1097@0.23.1792.1097" timestamp="1585222477692" />
+    <state x="100" y="100" width="1592" height="920" key="DiffContextDialog" timestamp="1584708830493">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="100" y="100" width="1592" height="920" key="DiffContextDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1584708830493" />
+    <state x="758" y="333" key="FileChooserDialogImpl" timestamp="1584700586772">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="758" y="333" key="FileChooserDialogImpl/0.23.1792.1097@0.23.1792.1097" timestamp="1584700586772" />
+    <state width="1750" height="262" key="GridCell.Tab.0.bottom" timestamp="1585236913525">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708234" />
+    <state width="1750" height="391" key="GridCell.Tab.0.bottom/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824380" />
+    <state width="1750" height="262" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913525" />
+    <state width="1750" height="262" key="GridCell.Tab.0.center" timestamp="1585236913524">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708233" />
+    <state width="1750" height="391" key="GridCell.Tab.0.center/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824379" />
+    <state width="1750" height="262" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913524" />
+    <state width="1750" height="262" key="GridCell.Tab.0.left" timestamp="1585236913522">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708232" />
+    <state width="1750" height="391" key="GridCell.Tab.0.left/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824378" />
+    <state width="1750" height="262" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913522" />
+    <state width="1750" height="262" key="GridCell.Tab.0.right" timestamp="1585236913524">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708233" />
+    <state width="1750" height="391" key="GridCell.Tab.0.right/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824379" />
+    <state width="1750" height="262" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913524" />
+    <state width="1750" height="262" key="GridCell.Tab.1.bottom" timestamp="1585236913527">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708236" />
+    <state width="1750" height="391" key="GridCell.Tab.1.bottom/0.23.1792.1046@0.23.1792.1046" timestamp="1583490833070" />
+    <state width="1750" height="262" key="GridCell.Tab.1.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913527" />
+    <state width="1750" height="262" key="GridCell.Tab.1.center" timestamp="1585236913526">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708235" />
+    <state width="1750" height="391" key="GridCell.Tab.1.center/0.23.1792.1046@0.23.1792.1046" timestamp="1583490833069" />
+    <state width="1750" height="262" key="GridCell.Tab.1.center/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913526" />
+    <state width="1750" height="262" key="GridCell.Tab.1.left" timestamp="1585236913525">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708234" />
+    <state width="1750" height="391" key="GridCell.Tab.1.left/0.23.1792.1046@0.23.1792.1046" timestamp="1583490833068" />
+    <state width="1750" height="262" key="GridCell.Tab.1.left/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913525" />
+    <state width="1750" height="262" key="GridCell.Tab.1.right" timestamp="1585236913526">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708235" />
+    <state width="1750" height="391" key="GridCell.Tab.1.right/0.23.1792.1046@0.23.1792.1046" timestamp="1583490833069" />
+    <state width="1750" height="262" key="GridCell.Tab.1.right/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913526" />
+    <state width="1750" height="262" key="GridCell.Tab.2.bottom" timestamp="1585236913529">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.2.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708238" />
+    <state width="1750" height="391" key="GridCell.Tab.2.bottom/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824208" />
+    <state width="1750" height="262" key="GridCell.Tab.2.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913529" />
+    <state width="1750" height="262" key="GridCell.Tab.2.center" timestamp="1585236913528">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.2.center/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708237" />
+    <state width="1750" height="391" key="GridCell.Tab.2.center/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824207" />
+    <state width="1750" height="262" key="GridCell.Tab.2.center/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913528" />
+    <state width="1750" height="262" key="GridCell.Tab.2.left" timestamp="1585236913528">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.2.left/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708236" />
+    <state width="1750" height="391" key="GridCell.Tab.2.left/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824206" />
+    <state width="1750" height="262" key="GridCell.Tab.2.left/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913528" />
+    <state width="1750" height="262" key="GridCell.Tab.2.right" timestamp="1585236913528">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.2.right/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708237" />
+    <state width="1750" height="391" key="GridCell.Tab.2.right/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824207" />
+    <state width="1750" height="262" key="GridCell.Tab.2.right/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913528" />
+    <state width="1750" height="262" key="GridCell.Tab.3.bottom" timestamp="1585236913531">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.3.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708239" />
+    <state width="1750" height="391" key="GridCell.Tab.3.bottom/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824210" />
+    <state width="1750" height="262" key="GridCell.Tab.3.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913531" />
+    <state width="1750" height="262" key="GridCell.Tab.3.center" timestamp="1585236913530">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.3.center/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708238" />
+    <state width="1750" height="391" key="GridCell.Tab.3.center/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824209" />
+    <state width="1750" height="262" key="GridCell.Tab.3.center/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913530" />
+    <state width="1750" height="262" key="GridCell.Tab.3.left" timestamp="1585236913530">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.3.left/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708238" />
+    <state width="1750" height="391" key="GridCell.Tab.3.left/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824208" />
+    <state width="1750" height="262" key="GridCell.Tab.3.left/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913530" />
+    <state width="1750" height="262" key="GridCell.Tab.3.right" timestamp="1585236913531">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.3.right/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708239" />
+    <state width="1750" height="391" key="GridCell.Tab.3.right/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824210" />
+    <state width="1750" height="262" key="GridCell.Tab.3.right/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913531" />
+    <state width="1750" height="262" key="GridCell.Tab.4.bottom" timestamp="1585236913533">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.4.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708241" />
+    <state width="1750" height="391" key="GridCell.Tab.4.bottom/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824213" />
+    <state width="1750" height="262" key="GridCell.Tab.4.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913533" />
+    <state width="1750" height="262" key="GridCell.Tab.4.center" timestamp="1585236913532">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.4.center/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708240" />
+    <state width="1750" height="391" key="GridCell.Tab.4.center/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824211" />
+    <state width="1750" height="262" key="GridCell.Tab.4.center/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913532" />
+    <state width="1750" height="262" key="GridCell.Tab.4.left" timestamp="1585236913532">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.4.left/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708240" />
+    <state width="1750" height="391" key="GridCell.Tab.4.left/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824211" />
+    <state width="1750" height="262" key="GridCell.Tab.4.left/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913532" />
+    <state width="1750" height="262" key="GridCell.Tab.4.right" timestamp="1585236913532">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="276" key="GridCell.Tab.4.right/0.0.1792.1120@0.0.1792.1120" timestamp="1585154708241" />
+    <state width="1750" height="391" key="GridCell.Tab.4.right/0.23.1792.1046@0.23.1792.1046" timestamp="1583490824212" />
+    <state width="1750" height="262" key="GridCell.Tab.4.right/0.23.1792.1097@0.23.1792.1097" timestamp="1585236913532" />
+    <state x="496" y="299" key="Rider.ProjectTemplateDialog.Size" timestamp="1584021899542">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="496" y="299" key="Rider.ProjectTemplateDialog.Size/0.0.1792.1120@0.0.1792.1120" timestamp="1584021899542" />
+    <state x="569" y="295" key="RollbackChangesDialog" timestamp="1585156446072">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="569" y="278" key="RollbackChangesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1585156004160" />
+    <state x="569" y="295" key="RollbackChangesDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1585156446072" />
+    <state x="397" y="218" key="SettingsEditor" timestamp="1584702679424">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1584634407927" />
+    <state x="397" y="209" key="SettingsEditor/0.23.1792.1046@0.23.1792.1046" timestamp="1583503635235" />
+    <state x="397" y="218" key="SettingsEditor/0.23.1792.1097@0.23.1792.1097" timestamp="1584702679424" />
+    <state x="569" y="223" key="VCS.ChangeListViewerDialog" timestamp="1584708826973">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="569" y="223" key="VCS.ChangeListViewerDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1584708826973" />
+    <state x="583" y="333" key="WebReferenceSession.Dialog" timestamp="1584630571600">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="583" y="333" key="WebReferenceSession.Dialog/0.23.1792.1097@0.23.1792.1097" timestamp="1584630571600" />
+    <state width="896" height="560" key="XDebugger.FullValuePopup" timestamp="1585137661092">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="896" height="560" key="XDebugger.FullValuePopup/0.0.1792.1120@0.0.1792.1120" timestamp="1585137661092" />
+    <state x="519" y="195" width="938" height="729" key="find.popup" timestamp="1585151696456">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="519" y="195" width="938" height="729" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1585151696456" />
+    <state x="519" y="205" width="903" height="681" key="find.popup/0.23.1792.1046@0.23.1792.1046" timestamp="1583505622776" />
+    <state x="519" y="214" width="903" height="715" key="find.popup/0.23.1792.1097@0.23.1792.1097" timestamp="1584700879873" />
+    <state x="570" y="237" key="scopes" timestamp="1584700713390">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="570" y="237" key="scopes/0.23.1792.1097@0.23.1792.1097" timestamp="1584700713390" />
+    <state x="475" y="85" width="840" height="1034" key="search.everywhere.popup" timestamp="1585315819921">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="475" y="85" width="840" height="1034" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1585155650536" />
+    <state x="475" y="85" width="840" height="1034" key="search.everywhere.popup/0.23.1792.1097@0.23.1792.1097" timestamp="1585315819921" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ListingApi/Controllers/ListingsController.cs</url>
+          <line>253</line>
+          <properties documentPath="$PROJECT_DIR$/ListingApi/Controllers/ListingsController.cs" initialLine="253">
+            <startOffsets>
+              <option value="10486" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10546" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ListingApi/Controllers/ListingsController.cs</url>
+          <line>293</line>
+          <properties documentPath="$PROJECT_DIR$/ListingApi/Controllers/ListingsController.cs" initialLine="293">
+            <startOffsets>
+              <option value="12280" />
+            </startOffsets>
+            <endOffsets>
+              <option value="12292" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ListingApi/Controllers/ListingsController.cs</url>
+          <line>290</line>
+          <properties documentPath="$PROJECT_DIR$/ListingApi/Controllers/ListingsController.cs" initialLine="290">
+            <startOffsets>
+              <option value="12158" />
+            </startOffsets>
+            <endOffsets>
+              <option value="12244" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ListingApi/Controllers/ListingsController.cs</url>
+          <line>303</line>
+          <properties documentPath="$PROJECT_DIR$/ListingApi/Controllers/ListingsController.cs" initialLine="303">
+            <startOffsets>
+              <option value="12592" />
+            </startOffsets>
+            <endOffsets>
+              <option value="12678" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ListingApi/Controllers/ListingsController.cs</url>
+          <line>307</line>
+          <properties documentPath="$PROJECT_DIR$/ListingApi/Controllers/ListingsController.cs" initialLine="307">
+            <startOffsets>
+              <option value="12772" />
+            </startOffsets>
+            <endOffsets>
+              <option value="12858" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo typeName="System.Security.Claims.ClaimsIdentity" fieldName="Claims" />
+        <PinnedItemInfo typeName="ListingApi.Models.Dto.ListingLookupResponse" fieldName="ListingDetails" />
+        <PinnedItemInfo typeName="ListingApi.Models.Cosmos.Listing" fieldName="Deleted" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>
