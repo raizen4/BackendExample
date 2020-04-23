@@ -1,0 +1,42 @@
+name: "$(major).$(minor).$(patch)"
+
+trigger:
+  branches:
+    include:
+      - master
+  paths:
+    include:
+      - client/web/agent/listing-ui-web/*
+
+variables:
+  major: 0
+  minor: 1
+  patch: "$[counter(format('{0}.{1}', variables['major'], variables['minor']), 0)]"
+  version: "$(major).$(minor).$(patch)"
+  appName: "listing-ui-web"
+  appNamespace: agent-ui
+
+stages:
+  - template: /Shared/Pipeline/Stages/buildandscan-react-app.2.0.0.yml
+    parameters:
+      imageAndProjectName: $(appName)
+      imageTag: $(version)
+      workingDirectory: "$(System.DefaultWorkingDirectory)/client/web/agent/listing-ui-web"
+
+  - stage: Deploy
+    displayName: "Deploy"
+    variables:
+      image: $(appName)
+      tag: $(version)
+      environment: Staging
+      apiUrl: https://www.launchb.dev
+      apiBaseUrl: https://web.agent.api.launchb.dev
+      b2cUrl: https://launchbagentb2cstaging.b2clogin.com/tfp/launchbagentb2cstaging.onmicrosoft.com/B2C_1A_Signin_1_0
+      b2cClientId: c51194b7-bf0d-4e89-a18a-3f3f94450581
+    jobs:
+      - template: /Shared/Pipeline/Steps/deployment-react-app.2.0.0.yml
+        parameters:
+          environment: Staging
+          appNamespace: $(appNamespace)
+          appName: $(appName)
+          appVersion: $(version)

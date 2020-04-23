@@ -1,0 +1,11 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "reporter": "junit",
+  "reporterOptions": {
+    "mochaFile": "cypress/output/test-output-[hash]/junit.xml",
+    "toConsole": true,
+    "attachments": true
+  },
+  "screenshotsFolder": "cypress/output/screenshots",
+  "videosFolder": "cypress/output/videos"
+}

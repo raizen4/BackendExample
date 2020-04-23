@@ -1,0 +1,29 @@
+name: #{image}#
+type: 'agent'
+environment: #{environment}#
+
+deployment:
+  httpPort: 3000
+  livenessProbe:
+    httpGet:
+      path: /listing
+    initialDelaySeconds: 3
+    periodSeconds: 3
+  readinessProbe:
+    httpGet:
+      path: /listing
+    initialDelaySeconds: 3
+    periodSeconds: 3
+  image:
+    repository: 'boomindockerregistry.azurecr.io'
+    name: #{image}#
+    tag: #{tag}#
+    pullPolicy: IfNotPresent
+
+variables:
+  - name: B2C_URL
+    value: #{b2cUrl}#
+  - name: B2C_CLIENT_ID
+    value: #{b2cClientId}#
+  - name: API_BASE_URL
+    value: #{apiBaseUrl}#
